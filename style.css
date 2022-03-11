@@ -6,6 +6,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url('./img/wood-panels.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 button {
@@ -21,7 +25,7 @@ button {
     border: 2px;
     border-color: black;
     background: radial-gradient(circle at center, #B3B3B3, #636363);
-    box-shadow: 15px 15px 10px #CFCFCF;
+    box-shadow: 15px 15px 10px #222222;
     display: flex;
     justify-content: center;
     align-items: center;
