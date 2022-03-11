@@ -30,7 +30,7 @@ button {
 
 @font-face{
     font-family:'digital-clock-font';
-    src: url('/fonts/digital-7.ttf');
+    src: url('./fonts/digital-7.ttf');
    }
 
 .screen-container {
