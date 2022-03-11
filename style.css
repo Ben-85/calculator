@@ -1,0 +1,101 @@
+body {
+    overflow: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    border-radius: 40%;
+    font-size: 25px;
+    transition: all 0.3s ease 0s;
+} 
+
+.calc-container {
+    height: 600px;
+    width: 450px;
+    border-radius: 20px;
+    border: 2px;
+    border-color: black;
+    background: radial-gradient(circle at center, #B3B3B3, #636363);
+    box-shadow: 15px 15px 10px #CFCFCF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@font-face{
+    font-family:'digital-clock-font';
+    src: url('/fonts/digital-7.ttf');
+   }
+
+.screen-container {
+    height: 100px;
+    width: 400px;
+    background-color: black;
+    margin-top: 15px;
+    border-radius: 10px;
+    font-family: 'digital-clock-font';
+    color: #CFCFCF;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.upper-display {
+    height: 30%;
+    width: 98%;
+    font-size: 24px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 98%;
+}
+
+.lower-display {
+    height: 60%;
+    width: 98%;
+    font-size: 67px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 98%;
+}
+
+.buttons-container {
+    height: 400px;
+    width: 400px;
+    margin-top: 25px;
+    display: grid;
+    padding: 5px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+button.clear {
+    background: #ff7070;
+}
+
+.clear:hover {
+    background: #ff5f5f;
+}
+
+button.number {
+    background: #F2F2F2;
+}
+
+.number:hover {
+    background: #CFCFCF;
+}
+
+button.math-function {
+    background: #CFCFCF;
+}
+
+.math-function:hover {
+    background: #afafaf;
+}
