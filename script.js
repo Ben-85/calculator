@@ -4,13 +4,13 @@ function evaluate(equation) {
     } else if (equation[1] == '-') {
         return parseFloat(equation[0]) - parseFloat(equation[2]);
     } else if (equation[1] == '*') {
-        return parseFloat(equation[0]) * parseFloat(equation[2]);
+        return (parseFloat(equation[0]) * 10) * (parseFloat(equation[2]) * 10) / 100;
     } else if (equation[1] == '/') {
         if (equation[2] == '0') {
             window.open("https://www.youtube.com/watch?v=iik25wqIuFo", "_blank");
             return 'rick rolled';
         }
-        return parseFloat(equation[0]) / parseFloat(equation[2]);
+        return ((parseFloat(equation[0]) * 10) / (parseFloat(equation[2]) * 10));
     } else if (equation[1] == '^') {
         return Math.pow(parseFloat(equation[0]), parseFloat(equation[2]));
     } 
@@ -59,8 +59,16 @@ function main() {
                    this.id == 'multiply' || 
                    this.id == 'subtract' || 
                    this.id == 'plus') {
-            upperDisplay.innerHTML = lowerDisplay.innerHTML + ' ' + this.innerHTML;
-            lowerDisplay.innerHTML = '0';
+                    if (upperDisplay.innerHTML[upperDisplay.innerHTML.length - 1] == '+' ||
+                        upperDisplay.innerHTML[upperDisplay.innerHTML.length - 1] == '-' ||
+                        upperDisplay.innerHTML[upperDisplay.innerHTML.length - 1] == '*' ||
+                        upperDisplay.innerHTML[upperDisplay.innerHTML.length - 1] == '/') {
+                            upperDisplay.innerHTML = upperDisplay.innerHTML.substring(0, upperDisplay.innerHTML.length - 1);
+                            upperDisplay.innerHTML += this.innerHTML;
+                    } else {
+                        upperDisplay.innerHTML = lowerDisplay.innerHTML + ' ' + this.innerHTML;
+                        lowerDisplay.innerHTML = '0';
+                    }
         } else if (this.id == 'backspace') {
             let stringToSlice = lowerDisplay.innerHTML;
             lowerDisplay.innerHTML = stringToSlice.substring(0, stringToSlice.length - 1);
